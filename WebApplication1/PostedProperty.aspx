@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PostedProperty.aspx.cs" Inherits="WebApplication1.PostedProperty" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PostedProperty.aspx.cs" Inherits="WebApplication1.PostedProperty" %>
 
 <!DOCTYPE html>
 <html>
