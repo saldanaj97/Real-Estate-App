@@ -1,3 +1,7 @@
+# Real estate web applcation UI 
+
+Website can be accessed at https://uirealestateapp.azurewebsites.net/landingpage 
+
 1. Description:
 
 1.1. This web application is designed and built to search for, buy, rent, and sell a property worldwide. 
