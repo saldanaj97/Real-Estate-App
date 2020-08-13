@@ -1,0 +1,136 @@
+/** Customize the demo canvas */
+#example .demo-container {
+    height: 450px;
+    margin-top: 0;
+    padding: 85px 10px 40px 25px;
+    border: 0;
+    background: url( "images/demo-container-bg.jpg" ) 0 0 no-repeat;
+}
+ 
+ 
+ 
+ 
+/** Customize the splitter */
+.demo-container .RadSplitter {
+    border: 0;
+}
+    .demo-container .RadSplitter .rspPane {
+        border: 0;
+    }
+    .demo-container .RadSplitter .rspResizeBar,
+    .demo-container .RadSplitter .rspResizeBarHorizontal {
+        border: 0;
+        background-color: #ffffff;
+    }
+    .demo-container .RadSplitter .rspResizeBar:hover,
+    .demo-container .RadSplitter .rspResizeBarHorizontal:hover {
+        background-color: #f0f0f0;
+    }
+ 
+ 
+ 
+ 
+/** Customize the Calendar*/
+.demo-container .RadCalendar {
+    display: block;
+}
+ 
+ 
+ 
+ 
+/** Customize the PanelBar */
+.demo-container .RadPanelBar {}
+    .demo-container .RadPanelBar .rootGroup {
+        border-left: none;
+        border-right: none;
+    }
+    .demo-container .RadPanelBar .rpExpandable .rpExpandHandle,
+    .demo-container .RadPanelBar .rpExpanded .rpExpandHandle {
+        display: none;
+    }
+    .demo-container .RadPanelBar .rbIcon {
+        display: inline-block;
+        vertical-align: top;
+    }
+        .demo-container .RadPanelBar .rbIcon + .rbText {
+            vertical-align: top;
+        }
+ 
+ 
+    /** Checkbox group */
+    .demo-container .rpCheckBoxPanel {
+        margin: 0 0 5px;
+    }
+        .demo-container .rpCheckBoxPanel label {
+            display: block;
+        }
+ 
+ 
+    .demo-container .qsf-chk-personal,
+    .demo-container .qsf-chk-work {
+        margin: 2px 0;
+    }
+ 
+        .demo-container .qsf-chk-personal {
+            background: #abd962;
+        }
+        .demo-container .qsf-chk-work {
+            background: #66bde5;
+        }
+ 
+ 
+    /** Button group */
+    .demo-container .rbPrimaryIcon {
+        background-image: url("images/demo-container-sprite.png");
+    }
+ 
+        .demo-container .qsf-btn-group {
+            background-position: 0 0;
+        }
+        .demo-container .qsf-btn-ungroup {
+            background-position: 0 -32px;
+        }
+ 
+ 
+    /** Button hint */
+    .demo-container .qsf-btn-hint {
+        width: 16px;
+        height: 16px;
+        border: 1px solid #e7e7e7;
+        border-radius: 8px;
+        background: #f8f8f8;
+        line-height: 16px;
+        text-align: center;
+        display: inline-block;
+        cursor: help;
+    }
+ 
+ 
+ 
+ 
+/** Customize the Scheduler */
+.demo-container .RadScheduler {
+    width: 100%;
+}
+    .demo-container .RadScheduler .rsAptDelete,
+    .demo-container .RadScheduler .rsArrowLeft,
+    .demo-container .RadScheduler .rsArrowRight {
+        display: none;
+ 
+    }
+    .demo-container .RadScheduler .rsCategoryPattern .rsAptContent {
+        background: url('Images/pattern.png') repeat-x left top;
+    }
+    .demo-container .RadScheduler .rsHorizontalHeaderTable tr {
+        height: 25px;
+    }
+    .demo-container .RadScheduler .rsHorizontalHeaderTable div {
+        height: 24px;
+        line-height: 24px;
+    }
+    .demo-container .RadScheduler .rsHorizontalHeaderTable .rsResourceHeaderPersonal {
+        background: #e6f4d0;
+    }
+    .demo-container .RadScheduler .rsHorizontalHeaderTable .rsResourceHeaderWork {
+        background: #d3ecf8;
+    }

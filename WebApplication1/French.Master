@@ -1,0 +1,216 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="French.master.cs" Inherits="WebApplication1.French" %>
+<!DOCTYPE html>
+
+<html lang="en">           
+    <head runat="server">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.5.0/jquery.flexslider-min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" >
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.5.0/flexslider.min.css" rel="stylesheet">
+        <asp:PlaceHolder runat="server"><%: Scripts.Render("~/bundles/modernizr") %></asp:PlaceHolder>
+        <webopt:bundlereference runat="server" path="~/Content/css" />
+        <link href="css/search_page_styles.css" type="text/css" rel="stylesheet" />
+
+        <title>Results</title>
+    </head>
+     <body>
+        <form runat="server">
+            <asp:ScriptManager runat="server">
+                <Scripts>
+                    <%--Framework Scripts--%>
+                    <asp:ScriptReference Name="MsAjaxBundle" />
+                    <asp:ScriptReference Name="jquery" />
+                    <asp:ScriptReference Name="bootstrap" />
+                    <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                    <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                    <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                    <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                    <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                    <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                    <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                    <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                    <asp:ScriptReference Name="WebFormsBundle" />
+                    <%--Site Scripts--%>
+                </Scripts>
+            </asp:ScriptManager>
+
+            <!-- Navbar -->
+            <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #4eb5f1;">
+                <div class="navbar-header">
+                    <a class="navbar-brand" id="companyname" runat="server" href="landingpage.aspx">Properties Made Easier</a>
+                </div>
+                <div class="navbar-collapse collapse" style="float: right;">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" id="register" class="btn" data-toggle="modal" data-target="#modalRegisterNewUser">S'inscrire</a></li>
+                        <li style="color: white; font-size: x-large"><span>|</span></li>
+                        <li><a runat="server" id="login" class="btn " data-toggle="modal" data-target="#modalRegisterForm">S'identifier</a></li>
+                    </ul>             
+                </div>
+                <form class="navbar-form" role="search">
+                    <div class="form-group">
+                        <div class="input-group" style="margin-top: 0;">
+                            <input type="text" class="form-control" placeholder="Ville, État, or Code Postal">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" ID="btnsearch" type="submit" OnClick="location.href='Mainpage.aspx'"><i class="fa fa-search"></i></button>
+                                </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Pop up window for when a user clicks sign in  -->
+            <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header text-center" style="background-color: #4eb5f1;">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4 style="font-size: x-large; margin-bottom: 0px; color: white;">>S'identifier</h4>
+                        </div>
+                        <div class="modal-body mx-3">
+                            <div class="md-form mb-5">
+                                <label data-error="wrong" data-success="right" for="orangeForm-name">Votre Email</label>
+                                <input type="text" id="orangeForm-name" class="form-control validate">       
+                            </div>
+                            <div class="md-form mb-4">
+                                <label data-error="wrong" data-success="right" for="orangeForm-pass">Votre Mot de passe</label>
+                                <input type="password" id="orangeForm-pass" class="form-control validate">
+                            </div>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-left" style="padding: 5px 5px 5px 5px;">
+                            <button class="button3" data-dismiss="modal" data-target="#modalRegisterForm">Réinitialiser le mot de passe</button>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center" style="padding: 5px 5px 5px 5px;">
+                            <button class="button3" data-dismiss="modal" data-target="#modalRegisterForm">S'identifier</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                $(function () {
+                    $('#modal').modal(toggle)
+                });
+            </script>
+
+            <!-- Pop up window for when a user clicks register  ** ID FOR THIS ONE IS NOW modelRegisterNewUser **-->
+            <div class="modal fade" id="modalRegisterNewUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header text-center" style="background-color: #4eb5f1;">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h4 style="font-size: x-large; margin-bottom: 0px; color: white;">>S'inscrire</h4>
+                        </div>
+                        <div class="modal-body mx-3">
+                            <div class="md-form mb-5">
+                                <label data-error="wrong" data-success="right" for="orangeForm-name">Nom Complet</label>
+                                <input type="text" id="orangeForm-newname" class="form-control validate">       
+                            </div>
+                            <div class="md-form mb-4">
+                                <label data-error="wrong" data-success="right" for="orangeForm-pass">Votre Mot de Passe</label>
+                                <input type="password" id="orangeForm-newpass" class="form-control validate">
+                            </div>
+                            <div class="md-form mb-4">
+                                <label data-error="wrong" data-success="right" for="orangeForm-pass">Confirmez le mot de passe</label>
+                                <input type="password" id="orangeForm-confirmpass" class="form-control validate">
+                            </div>
+                            <div class="md-form mb-4">
+                                <label data-error="wrong" data-success="right" for="orangeForm-pass">Votre Email</label>
+                                <input type="password" id="orangeForm-email" class="form-control validate">
+                            </div>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center" style="padding: 5px 5px 5px 5px;">
+                            <button class="button3" data-dismiss="modal" data-target="#modalRegisterNewUser">Confirmer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Language switching dropdown -->
+            <script type="text/javascript">
+                function changeLanguage() {
+                    var url = document.getElementById('list').value;
+                    if (url != 'none') {
+                        window.location = url;
+                    }
+                }
+            </script>
+
+            <form class="language-switcher">
+                <select name="list" id="list">
+                    <option value="FrenchMainpage.aspx">Francais</option>
+                    <option value="Mainpage.aspx">English</option>
+                </select>
+                <input type="button" value="Go" onclick="changeLanguage()" />
+            </form>
+
+            <!-- Filter section and main section of the page --> 
+            <div class="page-layout">
+                <div class="sidebar">
+                    <div class="button-container">
+                        <a href="FrenchMainpage.aspx" class="button3">Achat</a><br />
+                        <a href="FrenchRental.aspx" class="button3">Location</a><br />
+                        <a href="FrenchSelling.aspx" class="button3">Vente</a><br />
+                    </div>
+                    <div class="filters">
+                        <table style="margin-right: auto; margin-left: 5px; vertical-align:top; text-align:left; border: none;">
+                        <tr>
+                            <td class="auto-style1">
+                                <asp:Label ID="lblFilter" runat="server" Font-Bold="True" Text="Filtres" Font-Size="X-Large"></asp:Label>
+                                <br />
+                                <asp:Label ID="lblradius" runat="server" ForeColor="#4eb5f1" Text="Rayon de recherche" Font-Size="Large"></asp:Label>
+                                &nbsp;<asp:CheckBoxList ID="CheckBoxList1" runat="server" Width="121px" >
+                                <asp:ListItem Value="0 - 20 Miles" Text="0 - 20 Miles"></asp:ListItem>
+                                <asp:ListItem Value="20 - 50 Miles" Text="20 - 50 Miles"></asp:ListItem>
+                                <asp:ListItem Value="50+ Miles" Text="50+ Miles"></asp:ListItem>
+                                </asp:CheckBoxList>  
+
+                                <asp:Label ID="lblBed" runat="server" ForeColor="#4eb5f1" Text="Des lits" Font-Size="Large"></asp:Label>
+                                &nbsp;<asp:CheckBoxList ID="CheckBoxList2" runat="server" >
+                                <asp:ListItem Value="0 - 3" Text="0 - 3"></asp:ListItem>
+                                <asp:ListItem Value="4 - 6" Text="4 - 6"></asp:ListItem>
+                                <asp:ListItem Value="7+" Text="7+"></asp:ListItem>
+                                </asp:CheckBoxList> 
+
+                                <asp:Label ID="lblbath" runat="server" ForeColor="#4eb5f1" Text="Baignoire" Font-Size="Large"></asp:Label>
+                                <asp:CheckBoxList ID="CheckBoxList3" runat="server" >
+                                <asp:ListItem Value="0 - 3" Text="0 - 3"></asp:ListItem>
+                                <asp:ListItem Value="4 - 6" Text="4 - 6"></asp:ListItem>
+                                <asp:ListItem Value="7+" Text="7+"></asp:ListItem>
+                                </asp:CheckBoxList> 
+
+                                <asp:Label ID="lblprice" runat="server" ForeColor="#4eb5f1" Text="Gamme de prix (pour les acheteurs)" Font-Size="Large"></asp:Label>
+                                <asp:CheckBoxList ID="CheckBoxList4" runat="server" Width="172px" >
+                                <asp:ListItem Value="$0 - $100000" Text="$0 - $100000"></asp:ListItem>
+                                <asp:ListItem Value="$100000 - $400000" Text="$100000 - $400000"></asp:ListItem>
+                                <asp:ListItem>$400000+</asp:ListItem>
+                                </asp:CheckBoxList>
+
+                                <asp:Label ID="Label1" runat="server" ForeColor="#4eb5f1" Text="Gamme de prix par mois (pour les locataires)" Font-Size="Large"></asp:Label>
+                                <asp:CheckBoxList ID="CheckBoxList5" runat="server" Width="172px" >
+                                <asp:ListItem Value="$0 - $2000" Text="$0 - $2000"></asp:ListItem>
+                                <asp:ListItem Value="$2000 - $4000" Text="$2000 - $4000"></asp:ListItem>
+                                <asp:ListItem>$4000+</asp:ListItem>
+                                </asp:CheckBoxList><br />
+                                <a href="Mainpage.aspx" class="button3">Appliquer</a><br />
+                            </td>  
+                        </tr>
+                        </table>
+                    </div>
+                </div>
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>   
+            </div>             
+        </form>
+    </body>
+</html>
+
