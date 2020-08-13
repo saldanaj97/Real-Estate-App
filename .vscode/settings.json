@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/25619a01-39e7-4695-95c2-84c879331118/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/UIRealEstateApp",
+    "appService.deploySubpath": "WebApplication1"
+}
