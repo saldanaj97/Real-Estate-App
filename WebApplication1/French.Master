@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="French.master.cs" Inherits="WebApplication1.French" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="French.master.cs" Inherits="WebApplication1.French" %>
 <!DOCTYPE html>
 
 <html lang="en">           
