@@ -1,46 +1,34 @@
-# Real estate web applcation UI 
+# Real Estate Web UI
+A UI for a real estate applcation. 
+ 
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Access](#access)
+* [Screenshots](#screenshots)
+* [Takeaways](#takeaways)
+ 
+## General Info 
+This project was created as part of a group project for a human web interfaces course. The UI was built for a real estate web application using the ASP.NET framework as chosen by a member of the group. My role in the group was to design the web app and translate those designs into code while the others would work on presenting my design to a 'client'. 
 
-Website can be accessed at https://uirealestateapp.azurewebsites.net/landingpage 
+## Technologies 
+This application was created with: 
+* HTML/CSS/Javascript
+* ASP.NET Web Framework 
+* Azure
 
-1. Description:
+## Access 
+UI can be accessed at https://uirealestateapp.azurewebsites.net/landingpage 
 
-1.1. This web application is designed and built to search for, buy, rent, and sell a property worldwide. 
-It uses a very simple, minimalistic interface to allow first time users to easily navigate through the application. 
-It is designed to perform necessary tasks with as little clicks as possible. 
-In addition to that, most features are within the same page to make users comfortable whether they filter 
-through properties, select a language or schedule a tour to view a property. Once the URL of the web application is entered, 
-the main/landing page will appear. Landing page contains all the necessary features and buttons 
-to push start a great user experience and operation of the application. 
+## Screenshots
+<img src="./DemoImages/landing.png" width="700" height="500"> <img src="./DemoImages/search_results.png" width="700" height="500">
+<img src="./DemoImages/login.png" width="700" height="500"> <img src="./DemoImages/details.png" width="700" height="500">
 
-2. Installation:
-2.1 This web application does not require an installation. 
-
-3. Operation:
-3.1. To access the web page, input URL to any web browser that supports HTML 4 and higher.
-3.2. To access an account (if any) select "Login" button and input login information i.e. username and password.
-3.3. To register for a new account, select "Register" button and input required information.
-3.4. To reset username/password, select "Forgot username/password" button in the login popup window and input e-mail.
-3.5. To search for a property, input location information in the search field and select "Search" button.
-3.6. To buy or rent a property, click on "Buy/Rent" button and input required information.
-3.7. To view a property or schedule a tour, select the desired property, and click "Schedule" button, input desired day and time.
-3.8. To sell a property, after logging into an account, select "Sell" button and create a listing. Input required information and upload files as desired.
-3.9. To operate filters, check desired filters before searching.
-3.10. To change the language, select the language in the language selector field in the top right of main page.
-3.11. To enlarge photographs of the properties, click and select desired photograph.
-
-4. Built with:
-4.1. .NET framework - software framework developed by Microsoft.
-4.2. Microsoft Visual Studio 2019 - an integrated development environment from Microsoft.
-4.3. C# - general-purpose, multi-paradigm programming language.
-
-5. Known bugs and unsupported features: 
-5.1. The web application does not have any known bugs.
-Currently, the unsupported features: backend, database, 
-and related issues to those such as saving new account information and property information. 
-Website only offers 2 languages at the moment. 
-
-6. Authors:
-Kabonzo Ramazani
-Juan Saldana
-Rupesh Solanki
-Serdar Piriyev.
+## Takeaways
+This application was a great oppurtunity to get better with frontend web development. Throughout the course of the project I was able to get better at the following: 
+* Designing a UI
+* Practice with translating designs and mockups to code
+* Working together with a group while being the main designer/frontend developer
+* HTML/CSS/Javascript
+* A little bit of ASP.NET
+* Hosting an ASP.NET web application with AZURE
