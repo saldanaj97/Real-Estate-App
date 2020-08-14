@@ -14,6 +14,7 @@ This project was created as part of a group project for a human web interfaces c
 ## Technologies 
 This application was created with: 
 * HTML/CSS/Javascript
+* C#
 * ASP.NET Web Framework 
 * Azure
 
@@ -30,5 +31,5 @@ This application was a great oppurtunity to get better with frontend web develop
 * Practice with translating designs and mockups to code
 * Working together with a group while being the main designer/frontend developer
 * HTML/CSS/Javascript
-* A little bit of ASP.NET
+* A little bit of ASP.NET and C#
 * Hosting an ASP.NET web application with AZURE
